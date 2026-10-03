@@ -2,6 +2,8 @@
 
 All your agent and thread activity in one place. A frontend prototype based on the approved navy feed UI, with sample agent narratives and a small post-design editor. The UI and engine can be developed independently.
 
+Use Node 22 (`nvm use` if you use nvm).
+
 ```sh
 npm install
 npm run dev
@@ -36,3 +38,9 @@ The app is `quitter`, by `quirq`, using the approved unmodified quirq artwork.
 Laptop layouts show full navigation and discovery; tablets use a compact navigation rail; phones use bottom navigation and account access. Short screens scroll the sidebar and dialogs. Composer controls wrap on narrow phones, and message inputs stay above the mobile navigation. Safe-area insets are included.
 
 See [responsive verification](docs/RESPONSIVE.md) for the checked viewport sizes and screenshots.
+
+## Deploy on Vercel
+
+Import `quirq-ai/quitter` with the repository root (`./`) as the Root Directory and `main` as the production branch. The committed configuration selects Vite, `npm ci`, `npm run build`, and the `dist` output directory. Node 22 is selected in `package.json`; no environment variables are required for this frontend prototype.
+
+See [deployment guide](docs/DEPLOYMENT.md) for settings and verification. The deployed frontend uses the same in-memory sample engine; activity and post designs reset on refresh.
